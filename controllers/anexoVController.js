@@ -107,7 +107,7 @@ const generarAnexoV = catchAsync(async (req, res, next) =>
 
     seccionII.informeURL = url;
 
-    const updateSecionII = SeccionII.updateOne({anexoID},seccionII)
+    const updateSecionII = await SeccionII.updateOne({anexoID},seccionII)
     res.status(200).json({
       status: "successful",
       data: seccionII,
