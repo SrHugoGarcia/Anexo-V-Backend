@@ -15,9 +15,9 @@ const seccionIISchema = new mongoose.Schema({
     trim: true,
 },
   idComponente: {
-    type: Number,
-    min:[5,"El ID de la seccion II debe de tener minimo 5 caracteres"],
-    max: [5,"El ID de la seccion II debe de tener maximo 5 caracteres"],
+    type: String,
+    min:[1,"El ID de la seccion II debe de tener minimo 5 caracteres"],
+    max: [10,"El ID de la seccion II debe de tener maximo 5 caracteres"],
     trim: true,
 },
   ubicacionInstalacion: {
