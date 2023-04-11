@@ -12,9 +12,9 @@ const createPDFBuffer = async (html, opciones) => {
 
 const crearInforme = async (seccionII) => {
   const s3 = new S3({
-    region: '',
-    accessKeyId: '',
-    secretAccessKey: ''
+    region: 'us-east-1',
+    accessKeyId: 'AKIAZ2OP2A3KLNTK62KQ',
+    secretAccessKey: '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'
   });
   const opciones = {
     format: 'Letter', // A3, A4, A5, Legal, Letter

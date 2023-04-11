@@ -86,7 +86,6 @@ const generarAnexoV = catchAsync(async (req, res, next) =>
     if(!seccionII) return next(new AppError("Ingresa un ID valido",400));
     console.log(seccionII)
     const url = await crearAnexoV(seccionII);
-
     seccionII.anexoURL = url;
 
     const updateSecionII =await  SeccionII.updateOne({anexoID},seccionII)
@@ -101,6 +100,7 @@ const generarAnexoV = catchAsync(async (req, res, next) =>
     if(!anexoID) return next(new AppError("Ingresa un ID",400))
 
     const seccionII = await SeccionII.findOne({anexoID});
+
     if(!seccionII) return next(new AppError("Ingresa un ID valido",400));
 
     const url = await crearInforme(seccionII);
