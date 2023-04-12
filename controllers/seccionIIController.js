@@ -1,8 +1,29 @@
-/*const catchAsync = require("../utils/catchAsync");
+const catchAsync = require("../utils/catchAsync");/*
 const { query, collection, doc, getDocs, getDoc, where, updateDoc } = require('firebase/firestore');
 const { db } = require('../config/db');*/
 const { createOne, getOne, getAll, updateOne, deleteOne } = require("./handleFactory");
+const AppError = require('../utils/AppError')
+const S3 = require('aws-sdk/clients/s3');
 
+const multer = require('multer');
+
+const multerStorage = multer.memoryStorage();
+//Comprobar si el archivo subido es una imagen
+const multerFilter = (req,file,cb)=>{
+    if(file.mimetype.startsWith('image')){
+        cb(null,true)
+    }else{
+        //Le pasamos un error
+        cb(new AppError("No es una imagen. Porfavor cargue solo imagenes",400),false)
+    }
+}
+
+const upload = multer({
+    storage : multerStorage,
+    fileFilter : multerFilter
+})
+//User
+const uploadImgCamara = upload.single('imgCamara');
 const SeccionII = require('../models/SeccionII');
 /*
 
@@ -138,6 +159,25 @@ const actualizarSeccionII = catchAsync(async (req, res, next) => {
 });
 
 */
+const subirImgCamara =catchAsync( async(req,res,next)=>{
+    if(!req.file) return next();
+    req.file.filename = `camara-${req.file.originalname}`
+    const key = `Camaras/Imagenes/${ req.file.filename}`;
+     const s3 = new S3({
+    region: '',
+    accessKeyId: '',
+    secretAccessKey: ''
+  });
+   const uploadConstancia = {
+    Bucket: 'iktan-training-production',    
+    Body: req.file.buffer,
+    Key: key
+  };
+  const respuesta = await s3.upload(uploadConstancia).promise();
+    req.body.imgCamara =respuesta.Location;
+    next();
+})
+
 const crearSeccionII = createOne(SeccionII);
 
 const actualizarSeccionII = updateOne(SeccionII);
@@ -148,4 +188,4 @@ const obtenerSeccionII = getOne(SeccionII);
 
 const obtenerSeccionesII = getAll(SeccionII);
 
-module.exports = { obtenerSeccionII, obtenerSeccionesII, actualizarSeccionII, crearSeccionII, eliminarSeccionII }
+module.exports = { obtenerSeccionII, obtenerSeccionesII, actualizarSeccionII, crearSeccionII, eliminarSeccionII,uploadImgCamara,subirImgCamara }

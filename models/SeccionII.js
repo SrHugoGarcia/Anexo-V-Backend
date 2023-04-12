@@ -172,6 +172,10 @@ imagenInfrarroja:  {
     type: Number,
     trim: true,
 },
+imgCamara: {
+  type: String,
+  trim: true,
+},
 })
 
 const SeccionII = mongoose.model("SeccionII", seccionIISchema,"SeccionII");

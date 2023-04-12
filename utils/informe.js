@@ -75,7 +75,7 @@ const html = (seccionII)=>{
     </div>
     <div style="display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; height: 43%; border-bottom: 1px solid black;">
         <div style="height: 100%; width: 50%; border-right: 1px solid black; inset: 50%;  text-align: center; ">
-          <img style="height: auto; width: 230px; padding-top: 40px; " src="https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png" alt="">
+          <img style="height: auto; width: 230px; padding-top: 40px; " src="${seccionII.imgCamara}" alt="">
         </div>
         <div style=" height: 100%; width: 50%;  text-align: center;">
           <img style=" height: auto; width: 230px; padding-top: 40px;  " src="${seccionII.imagenInfrarroja}" alt="" >
