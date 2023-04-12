@@ -74,11 +74,11 @@ const html = (seccionII)=>{
         </div>
     </div>
     <div style="display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; height: 43%; border-bottom: 1px solid black;">
-        <div style="height: 100%; width: 50%; border-right: 1px solid black; inset: 50%;  text-align: center; ">
-          <img style="height: auto; width: 230px; padding-top: 40px; " src="${seccionII.imgCamara}" alt="">
+        <div style="height: 100%; width: 50%; border-right: 1px solid black; inset: 50%; display: flex; justify-content: center; align-items: center;">
+          <img style="max-height: 220px; object-fit: cover;  width: 230px; width: 230px; object-position: center; object-fit: cover; " src="${seccionII.imgCamara}" alt="">
         </div>
-        <div style=" height: 100%; width: 50%;  text-align: center;">
-          <img style=" height: auto; width: 230px; padding-top: 40px;  " src="${seccionII.imagenInfrarroja}" alt="" >
+        <div style=" height: 100%; width: 50%; display: flex; justify-content: center; align-items: center; ">
+          <img style=" max-height: 220px; object-fit: cover;  width: 230px;  width: 230px; object-position: center; object-fit: cover;  " src="${seccionII.imagenInfrarroja}" alt="" >
         </div>
     </div>
     <div style="display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; height: 4%; border-top: 1px solid black;">
@@ -91,8 +91,8 @@ const html = (seccionII)=>{
     </div>
     <div style="display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; height: 42%; border-top: 1px solid black;">
         
-        <div style=" height: 100%; width: 50%;  border-right: 1px solid black;  text-align: center; ">
-        <img style=" height: auto; width: 230px; padding-top: 40px; " src="${seccionII.imagen}" alt="" >  
+        <div style=" height: 100%; width: 50%;  border-right: 1px solid black;  display: flex; justify-content: center; align-items: center; ">
+        <img style="max-height: 220px; object-fit: cover;  width: 230px; object-position: center; object-fit: cover;" src="${seccionII.imagen}" alt="" >  
         </div>
         <div style=" height: 100%; width: 50%; ">
           <p style=" text-align: center; font-size: 11px; line-height: 0px; padding-top: 60px;">Factores ambientales</p>

@@ -163,11 +163,11 @@ const subirImgCamara =catchAsync( async(req,res,next)=>{
     if(!req.file) return next();
     req.file.filename = `camara-${req.file.originalname}`
     const key = `Camaras/Imagenes/${ req.file.filename}`;
-     const s3 = new S3({
-    region: '',
-    accessKeyId: '',
-    secretAccessKey: ''
-  });
+    const s3 = new S3({
+        region: '',
+        accessKeyId: '',
+        secretAccessKey: ''
+      });
    const uploadConstancia = {
     Bucket: 'iktan-training-production',    
     Body: req.file.buffer,

@@ -20,7 +20,7 @@ app.use((req,res,next) =>{
     req.requestTime = new Date().toISOString();
     next();
 })
-
+/*
 const whileList = ['http://localhost:6969'];
 const corsOptions = {
     origin: function (origin, callback) {
@@ -35,7 +35,7 @@ const corsOptions = {
     credentials: true
 };
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions))*/
 app.use("/api/v1/anexoV",anexoVRoutes);
 app.use("/api/v1/cliente",clienteRoutes);
 app.use("/api/v1/seccionII",seccionIIRoutes);
