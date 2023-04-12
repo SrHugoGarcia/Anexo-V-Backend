@@ -665,15 +665,7 @@ const contenido = `
       <td class="titulosseccionII"> </td>
 
     </tr>
-    <tr class="diseñocolumnahojados" >    <!-- Fila4 -->
-      <td class="titulosseccionII" >Fecha de conclusión de la inspección técnica</td>
-      <td class="titulosseccionII"> ${seccionII.fechafinalizacionInspeccion ? seccionII.fechafinalizacionInspeccion : ""} </td>
-      <td class="titulosseccionII"> </td>
-      <td class="titulosseccionII"> </td>
-      <td class="titulosseccionII"> </td>
-      <td class="titulosseccionII"> </td>
  
-    </tr>
     <tr class="diseñocolumnahojados" >    <!-- Fila5 -->
       <td class="titulosseccionII">Hora de comprobaión de la reparación (hh:mm)</td>
       <td class="titulosseccionII">${seccionII.horaComprobacionReparacion ? seccionII.horaComprobacionReparacion: "" } </td>
