@@ -32,6 +32,7 @@ const crearAnexoV = async (seccionII) => {
   
   const templateHTML = html(seccionII);
   const fileName = `AnexoV-${seccionII.anexoID}-${Date.now()}.pdf`;
+  console.log("PASA")
   const buffer = await createPDFBuffer(templateHTML, opciones);
   const uploadConstancia = {
     Bucket: 'iktan-training-production',    
@@ -754,6 +755,7 @@ const contenido = `
  
 
 </div> <!----------------------------------Hoja 1 Fin ----------------------->
+
 <div> <!----------------------------------Hoja 2  -------------------------->
 
 <table class="tablacompleta espaciotabladearriba" >
@@ -804,6 +806,7 @@ const contenido = `
    </p>
 <div>
 </div> <!----------------------------------Hoja 2 Fin ----------------------->
+
 <div> <!----------------------------------Hoja 3 --------------------------->
 <table class="tablacompleta espaciotabladearriba" >
   <thead >
